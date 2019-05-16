@@ -16,7 +16,7 @@ from gpiozero import LED, Button
 #if not used, program continues with only iMET recording
 try:
     ser_ADC = serial.Serial(
-            port='/dev/ttyACM0',
+            port='/dev/ARD',
             baudrate = 9600,
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
@@ -41,7 +41,7 @@ ser_xBee = serial.Serial(
 #check if iMet attached
 try:
     ser_iMET = serial.Serial(
-            port='/dev/ttyUSB0',
+            port='/dev/IMET',
             baudrate = 57600,
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
@@ -90,5 +90,7 @@ while stop_button.is_pressed == 0:
 		iMET_file.close()
 	print(counter)
 	counter += 1
+
+print("done\n")
 		
 		
