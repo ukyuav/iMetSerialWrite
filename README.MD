@@ -17,6 +17,13 @@ To run this program, navigate to the directory containing the file .py file and 
 python serial_write.py
 ```
 
+To have the program run on boot, add the following lines to the `/etc/rc.local` file.
+
+```
+cd \path\to\executable
+python serial_write_py &
+```
+
 ### PORT NAMING
 
 In order to keep the port names consistent with the devices accessed, symbolic links are used.  To enable these create a file in the `/etc/udev/rules.d/` directory with the following rules:
